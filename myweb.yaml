@@ -16,7 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: fpacilio/apache:1.0
+      - image: fpacilio/apache:latest
         imagePullPolicy: Always
         name: myweb
 

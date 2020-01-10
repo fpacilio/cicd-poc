@@ -6,9 +6,16 @@ pipeline {
         git 'https://github.com/fpacilio/cicd-poc.git'
       }
     }
+    stage('Build image') {
+      steps {
+        sh '''        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }'''
+        }
+      }
+    }
+    environment {
+      registry = 'fpacilio/apache'
+      dockerImage = ''
+    }
   }
-  environment {
-    registry = 'fpacilio/apache'
-    dockerImage = ''
-  }
-}

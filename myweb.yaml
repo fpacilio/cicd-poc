@@ -18,7 +18,7 @@ spec:
         date: "PIPPO"
     spec:
       containers:
-      - image: linuxacademycontent/kubeserve:v1
+      - image: fpacilio/apache:latest
         imagePullPolicy: Always
         name: myweb
 

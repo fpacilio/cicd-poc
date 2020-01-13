@@ -14,7 +14,8 @@ spec:
     metadata:
       labels:
         app: myweb
-      annotations: PIPPO        
+      annotations:
+        date: "PIPPO"
     spec:
       containers:
       - image: fpacilio/apache:latest

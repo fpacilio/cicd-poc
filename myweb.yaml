@@ -6,7 +6,7 @@ metadata:
     app: myweb
   name: myweb
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: myweb
@@ -18,7 +18,7 @@ spec:
         date: "PIPPO"
     spec:
       containers:
-      - image: fpacilio/apache:latest
+      - image: linuxacademycontent/kubeserve:v1
         imagePullPolicy: Always
         name: myweb
 

@@ -37,11 +37,11 @@ pipeline {
     }
     }
 
-
     stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
+            sh 'export ID=`date +\"%s\"`; echo $ID; sed -i "s|PIPPO|$ID|" myweb.yaml'
+            kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
         }
       }
     }
